@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 
 export default class SearchBar extends Component {
-  state = {
-    value: ''
-  };
+  state = { value: '' };
 
-  onSubmit = (e) => {
-    e.preventDefault()
+  onSubmit = e => {
+    e.preventDefault();
 
     this.props.onSubmit(this.state.value);
 
-    this.setState({ value: '' });
-  }
+    this.setState({ value: "" });
+  };
+
   render() {
     return (
       <div className="search-bar ui segment">
@@ -22,7 +21,7 @@ export default class SearchBar extends Component {
               type="text"
               placeholder="Type here"
               value={this.state.value}
-              onChange={(e) => this.setState({ value: e.target.value })}
+              onChange={e => this.setState({ value: e.target.value })}
             />
           </div>
         </form>
