@@ -10,6 +10,10 @@ export default class App extends Component {
     selectedVideo: null
   };
 
+  componentDidMount() {
+    this.onSearchSumit("Afv");
+  }
+
   onVideoSelect = video => {
     console.log("[APP]", video);
     this.setState({ selectedVideo: video });
@@ -22,7 +26,10 @@ export default class App extends Component {
       }
     });
 
-    this.setState({ videos: response.data.items });
+    this.setState({
+      videos: response.data.items,
+      selectedVideo: response.data.items[0]
+    });
   };
 
   render() {
