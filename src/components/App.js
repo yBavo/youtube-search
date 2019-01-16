@@ -11,7 +11,7 @@ export default class App extends Component {
   };
 
   componentDidMount() {
-    this.onSearchSumit("Afv");
+    this.onSearchSumit("funny video");
   }
 
   onVideoSelect = video => {
